@@ -1,8 +1,10 @@
 # dots
 Config files for linux
 
+![Alt text](https://github.com/tehnatural1/dots/blob/master/screen_2018_09_20.png "Title")
 
-#### Linux 
+
+##### Linux 
 - i3wm Gaps
 - polybar
 - ranger
