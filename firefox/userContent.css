@@ -21,7 +21,6 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
   }
 
 
-
 /* Base */
   *, ::before, ::after
   {
@@ -370,22 +369,5 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
     background-color: #282828 !important;
   }
 }
-
-@-moz-document url-prefix(https://docs.gooogle)
-{
-
-  *, ::before, ::after
-  {
-    color: #a89984 !important;
-    border-color: #1d2021 !important;
-    outline-color: #1d2021 !important;
-    text-shadow: none !important;
-    box-shadow: none !important;
-    /*-moz-box-shadow: none !important;*/
-    /* background-color: transparent !important; */
-  }
-
-
-
 
 }
