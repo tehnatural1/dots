@@ -3,17 +3,17 @@ Config files for linux
 
 
 #### Linux 
--i3wm Gaps
--polybar
--ranger
--rofi
--termite
--zathura
+- i3wm Gaps
+- polybar
+- ranger
+- rofi
+- termite
+- zathura
 
 ##### Fonts Used
--Fira Mono
--NotoSans
--MaterialIcons
--Termsynu
--unifont
+- Fira Mono
+- NotoSans
+- MaterialIcons
+- Termsynu
+- unifont
 
