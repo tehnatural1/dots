@@ -1,27 +1,17 @@
 /* AGENT_SHEET */
-@-moz-document url-prefix(http://), url-prefix(https://), url-prefix(ftp://), url-prefix(file://), url(about:blank), 
-
-/* Best effort to exclude about pages that conflict with Australis-native styling   */
-regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|permissions|preferences|sync-tabs|webrtc).*")
-
-/*url-prefix("about:neterror")*/
-/* url-prefix("about:"),   */
+@-moz-document url-prefix(http://), 
+               url-prefix(https://), 
+               url-prefix(ftp://), 
+               url-prefix(file://), 
+               url(about:blank), 
+               regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|permissions|preferences|sync-tabs|webrtc).*")
 {
 
-/*
- * Drop the below regex, after a comma, just before the opening curly bracket above, to exclude websites from solarization: 
- * ,regexp("https?://(www\.)?(?!(userstyles\.org|docs\.google|github)\..*).*")
- */
-
-
-/* Firefox Scrollbars */
   scrollbar
   {
     opacity: .75 !important;
   }
 
-
-/* Base */
   *, ::before, ::after
   {
     color: #a89984 !important;
@@ -29,7 +19,7 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
     outline-color: #1d2021 !important;
     text-shadow: none !important;
     box-shadow: none !important;
-/*-moz-box-shadow: none !important;*/
+    /*-moz-box-shadow: none !important;*/
     background-color: transparent !important;
   }
 
@@ -48,9 +38,9 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
   }
 
 
-/* :: Give solid BG :: */
 
-/* element */
+/* Setting Solid Color Background */
+
   b,i,u,strong
   {
     color: #98971a;
@@ -68,26 +58,15 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
   menu,
   aside,
 
-/* common */
+  [class*="nav"],        [class*="open"],
+  [class*="ropdown"],    [class*="tooltip"],
+  [id*="ropdown"],
 
-  [class*="nav"],
-  [class*="open"],
-  [id*="ropdown"], /*dropdown*/
-  [class*="ropdown"], 
-  div[class*="menu"],
-  [class*="tooltip"],
-  div[class*="popup"], 
-  div[id*="popup"],
-
-/* Notes, details, etc.  Maybe useful */
-  div[id*="detail"],div[class*="detail"],
-  div[class*="note"], span[class*="note"],
-  div[class*="description"],
-
-/* Also common */
+  div[id*="popup"],      div[id*="detail"],
+  div[class*="popup"],   div[class*="menu"],
   div[class*="content"], div[class*="container"],
-
-/* Popup divs that use visibility: hidden and display: none */
+  div[class*="detail"],  div[class*="description"], 
+  div[class*="note"],    span[class*="note"],
   div[style*="display: block"], 
   div[style*="visibility: visible"]
   {
@@ -95,26 +74,28 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
   }
 
 
-/*: No BG :*/
-  *:not(:empty):not(span):not([class="html5-volume-slider html5-draggable"]):not([class="html5-player-chrome html5-stop-propagation"]), *::before, *::after,
-  td:empty, p:empty, div:empty:not([role]):not([style*="flashblock"]):not([class^="html5"]):not([class*="noscriptPlaceholder"])
+
+/* Disabling Background Images */
+
+  /* :not(div[class="kix-equation-toolbar-icon"]) */
+  *:not(:empty):not(span):not([class="html5-volume-slider html5-draggable"]):not([class="html5-player-chrome html5-stop-propagation"]):not([class*="kix-equation-toolbar-icon"]):not([class*="$
+  *::before,
+  *::after,
+  td:empty,
+  p:empty,
+  div:empty:not([role]):not([style*="flashblock"]):not([class^="html5"]):not([class*="noscriptPlaceholder"])
   {
     background-image: none !important;
   }
 
 
-/*: Filter non-icons :*/
-/*  span:not(:empty):not([class*="icon"]):not([id*="icon"]):not([class*="star"]):not([id*="star"]):not([id*="rating"]):not([class*="rating"]):not([class*="prite"])
-  {
-    background-image: none !important;
-    text-indent: 0 !important;
-  }
-*/
 
-/*: Image opacity :*/
+/* Setting Image Opacity */
+
   img, svg
   {
     opacity: .75 !important;
+    /* -webkit-filter: invert(83.5%); */
   }
 
   img:hover, svg:hover
@@ -124,7 +105,8 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
 
 
 
-/* Highlight */
+/* Highlighting & Selections */
+
   ::-moz-selection
   {
     background-color: #ebdbb2 !important;
@@ -133,35 +115,13 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
 
   ::selection
   {
-	background-color: #ebdbb2 !important;
-	color: #32302f !important;
+    background-color: #ebdbb2 !important;
+    color: #32302f !important;
   }
 
-  /* google docs highlight */
-  .kix-selection-overlay {
-	background-color: #ebdbb2 !important;
-	color: #32302f !important;
-	border-top: 1px solid #32302f !important;
-	border-bottom: 1px solid #32302f !important;
-	opacity: 0.20 !important;
-	-moz-opacity: 0.20 !important;
-	filter: alpha(opacity=20) !important;
-	z-index: 20 !important;
-  }
 
-  .kix-page
-  {
-	outline: 1px solid #ebdbb2 !important;
-  }
 
-  .kix-cursor-caret
-  {
-    color: #ebdbb2 !important;
-	outline-color: #ebdbb2 !important;
-	border-color: #ebdbb2 !important;
-  }
-
-/* ::: anchor/links ::: */
+/* Website Links */
 
   a
   {
@@ -192,14 +152,18 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
     color: #d65d0e !important;
   }
 
-/* "Top level" div */
+
+
+/* Top Level div */
 
   body > div
   {
     background-color: inherit !important;
   }
 
-/* :::::: Text Presentation :::::: */
+
+
+/* Text Presentation */
 
   summary, details
   {
@@ -223,20 +187,17 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
   }
 
 
-/* :::::: Headings :::::: */
+
+/* Headings */
 
   h1,h2,h3,h4,h5,h6
   {
     background-image: none !important;
+    /* background-color: #1d2021 !important; */
     border-radius: 5px !important;
-/*-moz-border-radius: 5px !important;*/
+    /*-moz-border-radius: 5px !important;*/
     -webkit-border-radius: 5px !important;
     text-indent: 0 !important;
-  }
-
-  h1,h2,h3,h4,h5,h6
-  {
-    background-color: #1d2021 !important;
   }
 
   h1,h2
@@ -254,7 +215,9 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
     color: #d65d0e!important;
   }
 
-/* :::::: Tables, cells :::::: */
+
+
+/* Tables */
 
   table table
   {
@@ -266,7 +229,9 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
     background: #282828 !important;
   }
 
-/* ::: Inputs, textareas ::: */
+
+
+/* Inputs */
 
   input, textarea, button,
   select,option,optgroup
@@ -286,7 +251,9 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
     border-width: 1px !important;
   }
 
-/* :::::: Button styling :::::: */
+
+
+/* Buttons */
 
   input[type="button"],
   input[type="submit"],
@@ -315,7 +282,64 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
     opacity: .95 !important;
   }
 
+
+
+/* Google Drive */
+
+  .a-jn-yd-J
+  {
+    background-color: #32302f !important; 
+  }
+
+
+
+/* Google Docs */
+
+  .kix-selection-overlay {
+    background-color: #ebdbb2 !important;
+    color: #32302f !important;
+    border-top: 1px solid #32302f !important;
+    border-bottom: 1px solid #32302f !important;
+    opacity: 0.20 !important;
+    -moz-opacity: 0.20 !important;
+    filter: alpha(opacity=20) !important;
+    z-index: 20 !important;
+  }
+
+  .kix-page
+  {
+    outline: 1px solid #ebdbb2 !important;
+  }
+
+  .kix-cursor-caret
+  {
+    color: #ebdbb2 !important;
+    outline-color: #ebdbb2 !important;
+    border-color: #ebdbb2 !important;
+  }
+
+  .kix-equation-toolbar-icon
+  {
+    -webkit-filter: invert(100%);
+  }
+
+  .kix-equation-toolbar-palette-icon
+  {
+    -webkit-filter: invert(60%);
+  }
+
+
+
+/* uOttawa - Brightspace */
+  .d2l-page-message-container
+  {
+    width: 0%;
+  }
+
+
+
 /* Lightbox fix */
+
   html [id*="lightbox"] *
   {
     background-color: transparent !important;
@@ -326,19 +350,27 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
     opacity: 1 !important;
   }
 
+
+
 /* Youtube Annotation */
+
   #movie_player-html5 .annotation
   {
     background: #1d2021 !important;
   }
 
-/* Mozilla addons shrink/expand sections */
+
+
+/* addons shrink & expand sections */
+
   .expando a
   {
     background: none transparent  !important;
   }
 
 }
+
+
 
 @-moz-document url(about:newtab)
 {
@@ -360,6 +392,8 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
   }
 }
 
+
+
 @-moz-document url(chrome://browser/content/browser.xul)
 {
 
@@ -369,3 +403,4 @@ regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|pe
     background-color: #282828 !important;
   }
 }
+
