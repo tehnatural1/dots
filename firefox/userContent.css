@@ -1,10 +1,10 @@
 /* AGENT_SHEET */
 @-moz-document url-prefix(http://), 
-               url-prefix(https://), 
-               url-prefix(ftp://), 
-               url-prefix(file://), 
-               url(about:blank), 
-               regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|permissions|preferences|sync-tabs|webrtc).*")
+			   url-prefix(https://), 
+			   url-prefix(ftp://), 
+			   url-prefix(file://), 
+			   url(about:blank), 
+			   regexp("about:(?!addons|app-manager|config|customizing|stylish-edit|downloads|permissions|preferences|sync-tabs|webrtc).*")
 {
 
   scrollbar
@@ -19,7 +19,7 @@
     outline-color: #1d2021 !important;
     text-shadow: none !important;
     box-shadow: none !important;
-    /*-moz-box-shadow: none !important;*/
+	/*-moz-box-shadow: none !important;*/
     background-color: transparent !important;
   }
 
@@ -78,7 +78,7 @@
 /* Disabling Background Images */
 
   /* :not(div[class="kix-equation-toolbar-icon"]) */
-  *:not(:empty):not(span):not([class="html5-volume-slider html5-draggable"]):not([class="html5-player-chrome html5-stop-propagation"]):not([class*="kix-equation-toolbar-icon"]):not([class*="$
+  *:not(:empty):not(span):not([class="html5-volume-slider html5-draggable"]):not([class="html5-player-chrome html5-stop-propagation"]):not([class*="kix-equation-toolbar-icon"]):not([class*="kix-equation-toolbar-palette-icon"]),
   *::before,
   *::after,
   td:empty,
@@ -95,7 +95,7 @@
   img, svg
   {
     opacity: .75 !important;
-    /* -webkit-filter: invert(83.5%); */
+	/* -webkit-filter: invert(83.5%); */
   }
 
   img:hover, svg:hover
@@ -115,8 +115,8 @@
 
   ::selection
   {
-    background-color: #ebdbb2 !important;
-    color: #32302f !important;
+	background-color: #ebdbb2 !important;
+	color: #32302f !important;
   }
 
 
@@ -193,9 +193,9 @@
   h1,h2,h3,h4,h5,h6
   {
     background-image: none !important;
-    /* background-color: #1d2021 !important; */
+	/* background-color: #1d2021 !important; */
     border-radius: 5px !important;
-    /*-moz-border-radius: 5px !important;*/
+	/*-moz-border-radius: 5px !important;*/
     -webkit-border-radius: 5px !important;
     text-indent: 0 !important;
   }
@@ -288,7 +288,7 @@
 
   .a-jn-yd-J
   {
-    background-color: #32302f !important; 
+	background-color: #32302f !important; 
   }
 
 
@@ -296,36 +296,36 @@
 /* Google Docs */
 
   .kix-selection-overlay {
-    background-color: #ebdbb2 !important;
-    color: #32302f !important;
-    border-top: 1px solid #32302f !important;
-    border-bottom: 1px solid #32302f !important;
-    opacity: 0.20 !important;
-    -moz-opacity: 0.20 !important;
-    filter: alpha(opacity=20) !important;
-    z-index: 20 !important;
+	background-color: #ebdbb2 !important;
+	color: #32302f !important;
+	border-top: 1px solid #32302f !important;
+	border-bottom: 1px solid #32302f !important;
+	opacity: 0.20 !important;
+	-moz-opacity: 0.20 !important;
+	filter: alpha(opacity=20) !important;
+	z-index: 20 !important;
   }
 
   .kix-page
   {
-    outline: 1px solid #ebdbb2 !important;
+	outline: 1px solid #ebdbb2 !important;
   }
 
   .kix-cursor-caret
   {
     color: #ebdbb2 !important;
-    outline-color: #ebdbb2 !important;
-    border-color: #ebdbb2 !important;
+	outline-color: #ebdbb2 !important;
+	border-color: #ebdbb2 !important;
   }
 
   .kix-equation-toolbar-icon
   {
-    -webkit-filter: invert(100%);
+	-webkit-filter: invert(100%);
   }
 
   .kix-equation-toolbar-palette-icon
   {
-    -webkit-filter: invert(60%);
+	-webkit-filter: invert(60%);
   }
 
 
@@ -333,7 +333,7 @@
 /* uOttawa - Brightspace */
   .d2l-page-message-container
   {
-    width: 0%;
+	width: 0%;
   }
 
 
