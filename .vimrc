@@ -3,10 +3,18 @@ set nocompatible
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
-" set guifont=Fira\ Mono\ Bold\ 12
+set guifont=Fira\ Mono\ Medium\ 14
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+
+set whichwrap+=<,>,[,]
 
 colorscheme gruvbox
-set termguicolors
+" set termguicolors
+let g:gruvbox_termcolors=256
+let g:gruvbox_bold=1
 let g:gruvbox_contrast_dark='hard'
 set bg=dark
 
