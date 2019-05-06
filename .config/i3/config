@@ -156,39 +156,49 @@ hide_edge_borders smart
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 
-#AUTOSTART
+# Resize Windows
+bindsym $mod+Ctrl+Shift+Right resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+Shift+Up resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+Shift+Down resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+Shift+Left resize grow width 10 px or 10 ppt
+
+
+# AutoStart
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id termite --title __scratchpad
-#exec --no-startup-id termite --title __scratchpad_right
-
 for_window [title="__scratchpad"] move scratchpad
-#for_window [title="__scratchpad_right"] move scratchpad
 
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+# Adjust Brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-# AUDIO
-#bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
-#bindsym XF86AudioRaiseVolume exec amixer set Master 2+
-#bindsym XF86AudioLowerVolume exec amixer set Master 2-
+# Audio
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer set Master 2+
+bindsym XF86AudioLowerVolume exec amixer set Master 2-
 
-# SCREENSHOT
+# Screenshot
 bindsym Print exec gnome-screenshot -a
 
-# SCRATCHPAD
+# Scratchpad LAPTOP (1920 x 1080)
 bindsym $mod+Shift+F1 move container to scratchpad, move scratchpad
 bindsym $mod+F1 scratchpad show, move position 0 0, resize set 1920 568
-#bindsym $mod+F1 [title="__scratchpad"] scratchpad show, move position 0 0, resize set 1920 568
-#bindsym $mod+Shift+F2 [title="__scratchpad"] move scratchpad
+
+# Scratchpad DESKTOP (2560 x 1440)
+#bindsym $mod+Shift+F1 move container to scratchpad, move scratchpad
+#bindsym $mod+F1 scratchpad show, move position 0 0, resize set 2560 710
+
 bindsym $mod+x scratchpad show, move position 960 0, resize set 960 1047
-#bindsym $mod+x [title="__scratchpad_right"] scratchpad show, move position 960 0, resize set 960 1047
-#bindsym $mod+Shift+x [title="__scratchpad_right"] move scratchpad
 #bindsym $mod+shift+x move scratchpad
+
+# Workspace Navigation
+bindsym Control+Left workspace prev
+bindsym Control+Right workspace next
 
 gaps inner 10
 smart_gaps on
 
-
+# Color corrections
 client.focused			#ebdbb2		#ebdbb2		#ebdbb2		#ebdbb2		#ebdbb2
 client.focused_inactive #928374		#928374		#928374		#928374		#928374
 client.unfocused        #333333		#222222		#888888		#222222		#333333
